@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+    <HBox layoutX="14.0" layoutY="14.0" prefHeight="291.0" prefWidth="785.0" spacing="10">
+        <FlowPane prefWrapLength="150.0">
+            <TableView fx:id="tableParamsNames" prefHeight="280.0" prefWidth="162.0">
+                <columns>
+                    <TableColumn fx:id="columnParamsNames" minWidth="100.0" prefWidth="161.0" text="Параметр" />
+                </columns>
+                <opaqueInsets>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </opaqueInsets>
+            </TableView>
+        </FlowPane>
+
+        <VBox prefHeight="281.0" prefWidth="600.0" spacing="5">
+            <HBox prefWidth="622.0" spacing="10">
+                <Button fx:id="fileNameChooseButton" onAction="#filesChoose" prefHeight="25.0" prefWidth="175.0" text="Выбрать протоколы:" />
+                <TextField fx:id="stepNameField" prefHeight="25.0" prefWidth="420.0" promptText="Название шага с данными" />
+            </HBox>
+
+            <TextArea fx:id="fileNameInput" editable="false" prefHeight="199.0" prefWidth="494.0" />
+
+            <HBox prefHeight="45.0" prefWidth="575.0" spacing="10">
+                <Button fx:id="startButton" onAction="#parseStart" prefHeight="200.0" prefWidth="100.0" text="Старт" />
+                <Button fx:id="stopButton" disable="true" onAction="#parseStop" prefHeight="51.0" prefWidth="91.0" text="Стоп" />
+                <ProgressBar fx:id="startProgressBar" prefHeight="47.0" prefWidth="390.0" progress="0.0" />
+            </HBox>
+
+        </VBox>
+    </HBox>
+</AnchorPane>
